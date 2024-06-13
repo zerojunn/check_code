@@ -60,7 +60,6 @@ void UserDefined::switchStep(cv::Mat *frame) {
                 //cv::circle(*frame, corners[0][2],1,cv::Scalar(255,0,0),3);
                 //cv::circle(*frame, corners[0][3],1,cv::Scalar(0,0,0),5);               
                 if(yawcheck == false and ids[0]==352){
-                    std::cerr << ids[0] << std::endl;
                     std::cerr << "turning start" << std::endl;
                     yawcheck = true;
                     if(abs(corners[0][3].x-corners[0][0].x)<2 and abs(corners[0][2].y-corners[0][3].y)<2 and corners[0][2].y<corners[0][1].y and corners[0][2].x<corners[0][3].x){
@@ -97,7 +96,7 @@ void UserDefined::switchStep(cv::Mat *frame) {
                         else{
                             //setYawPnP(15);
                             vehicle->move_vel_byBody(0,0,0,30);
-                            //std::cerr << "turning" << atana2 << std::endl;
+                            std::cerr << "turning" << atana2 << std::endl;
                         }
                         
                     }//else
@@ -119,8 +118,8 @@ void UserDefined::switchStep(cv::Mat *frame) {
         std::cerr << "case - 3" << std::endl;
             //cv::aruco::detectMarkers(*frame, dic[4], corners, ids);
            // std::cerr << ids[0] << std::endl;
-            //if (ids.size()>0 and ids and yawcheck==false){
-                //std::this_thread::sleep_for(std::chrono::seconds(1));
+            //if (ids.size()>0 and yawcheck==false){
+              //  std::this_thread::sleep_for(std::chrono::seconds(2));
                 //std::cerr << "find yaw gogo" << std::endl;
                 //Switches = 2;
             //}
